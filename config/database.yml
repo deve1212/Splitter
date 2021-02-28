@@ -23,10 +23,10 @@ default: &default
 
 development:
   <<: *default
-  username: <%= ENV['TEMPLATEAPP_DATABASE_USER'] || 'lp-6' %>
-  password: <%= ENV['TEMPLATEAPP_DATABASE_PASSWORD'] || 'root' %>
-  host: <%= ENV['TEMPLATE_DATABASE_HOSTNAME'] || 'localhost' %>
-  database: spliter_development
+  username: <%= ENV['TEMPLATEAPP_DATABASE_USER']  %>
+  password: <%= ENV['TEMPLATEAPP_DATABASE_PASSWORD']  %>
+  host: <%= ENV['TEMPLATE_DATABASE_HOSTNAME'] %>
+  database: <%= ENV['TEMPLATEAPP_DATABASE']  %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -83,6 +83,7 @@ test:
 #
 production:
   <<: *default
-  database: billspliter_production
-  username: billspliter
-  password: <%= ENV['BILLSPLITER_DATABASE_PASSWORD'] %>
+  username: <%= ENV['TEMPLATEAPP_DATABASE_USER']  %>
+  password: <%= ENV['TEMPLATEAPP_DATABASE_PASSWORD']  %>
+  host: <%= ENV['TEMPLATE_DATABASE_HOSTNAME'] %>
+  database: <%= ENV['TEMPLATEAPP_DATABASE']  %>
