@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Billspliter</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+<p style="font-size:18px;">
+<b>Links to click:</b> <%= link_to "Users Info", users_url %> | <%= link_to "Bills Info", bills_url %>
+</p>
+<%= yield %>
+</div>
+</body>
+</html>
